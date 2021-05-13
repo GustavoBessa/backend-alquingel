@@ -1,17 +1,18 @@
 let yup = require('yup');
 let clientModel = require('../models/client');
-function validate(obj) {
+async function validate(obj) {
     let schema = clientModel;
-    schema.isValid(obj, function (valid) {
-        return valid; // => true
-    });
+    const valid = await schema.isValid(obj);
+    return valid;
 }
-module.exports = function (req, res) {
+module.exports = async function (req, res) {
     body = req.body;
 
-    console.log(validate(body));
-    if (!validate(body)) {
-        res.send('dados errados');
+    console.log(await validate(body));
+    if (!await validate(body)) {
+        res.json({
+            "err": "Campos Invalidos"
+        });
     } else {
         res.json(body);
     }
