@@ -1,0 +1,24 @@
+{
+  "name": "backend-alquingel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoBessa/backend-alquingel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoBessa/backend-alquingel/issues"
+  },
+  "homepage": "https://github.com/GustavoBessa/backend-alquingel#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "yup": "^0.32.9"
+  }
+}
