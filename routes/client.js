@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const register = require('../modules/register');
+const register = require('../modules/users/register');
+const login = require('../modules/users/login');
 
 router.get('/', function (req, res) {
     res.send('aaa page');
 });
 
-router.post('/register', register);
+router.post('/singup', register);
 
-router.get('/singin', function (req, res) {
-    res.send('sing in page');
-});
+router.post('/singin', login);
 
 module.exports = router;

@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/GustavoBessa/backend-alquingel#readme",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "mongodb": "^3.6.6",
     "yup": "^0.32.9"
   }
 }
