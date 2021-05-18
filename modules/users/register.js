@@ -16,7 +16,7 @@ module.exports = async function (req, res) {
             "err": "Campos Invalidos"
         });
     } else {
-        await db.insert(body, 'users', function (status) {
+        await db.insert(body, 'users', body.email, function (status) {
             if (!status) {
                 res.json({
                     "err": "Usuário já cadastrado"

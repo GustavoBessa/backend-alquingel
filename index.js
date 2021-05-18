@@ -1,6 +1,7 @@
 const express = require('express')
 var bodyParser = require('body-parser')
 const client = require('./routes/client');
+const devices = require('./routes/devices');
 const app = express()
 const port = 8080
 
@@ -13,6 +14,7 @@ app.get('/', function (req, res) {
     });
 });
 app.use('/client', client);
+app.use('/devices', devices);
 
 
 app.listen(port, () => {

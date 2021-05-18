@@ -2,11 +2,11 @@ require('dotenv').config()
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.BD_CONNECTION_STRING;
 
-module.exports.insert = function (obj, collection, _callback) {
+module.exports.insert = function (obj, collection, pkey, _callback) {
     MongoClient.connect(url, { useUnifiedTopology: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("alquingelDB");
-        dbo.collection(collection).find(obj).toArray(function (err, result) {
+        dbo.collection(collection).find(pkey).toArray(function (err, result) {
             if (result.length == 0) {
                 dbo.collection(collection).insertOne(obj, function (err, res) {
                     if (err) throw err;

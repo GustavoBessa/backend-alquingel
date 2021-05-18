@@ -5,7 +5,7 @@ const url = process.env.BD_CONNECTION_STRING;
 MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("alquingelDB");
-    var query = { name: "aaaaaaasweqw dasssssda" };
+    var query = {};
     dbo.collection("users").find(query).toArray(function (err, result) {
         if (err) throw err;
         console.log(result);
