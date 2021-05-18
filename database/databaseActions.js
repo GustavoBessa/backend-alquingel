@@ -34,3 +34,23 @@ module.exports.list = function (query, collection, _callback) {
         });
     });
 }
+
+module.exports.update = function (query, newbody, collection, _callback) {
+    MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("alquingelDB");
+        dbo.collection(collection).findOneAndUpdate(
+            query,
+            { '$set': newbody },
+            function (err, res) {
+                if (err) throw err;
+                if (res.value == null) {
+                    _callback(false);
+                } else {
+                    db.close();
+                    _callback(true);
+                }
+            }
+        );
+    });
+}
