@@ -4,10 +4,10 @@ const register = require('../modules/devices/register');
 const update = require('../modules/devices/update');
 const list = require('../modules/devices/list');
 
-router.post('/new', register);
+router.post('/', register);
 
-router.post('/update-nivel', update);
+router.put('/', update);
 
-router.get('/list', list);
+router.get('/', list);
 
 module.exports = router;

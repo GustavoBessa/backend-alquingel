@@ -1,5 +1,3 @@
-let yup = require('yup');
-let clientModel = require('../../models/client');
 const db = require('../../database/databaseActions');
 
 module.exports = async function (req, res) {

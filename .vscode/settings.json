@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/12addb71-4126-4486-8c46-12a71769c2ff/resourceGroups/RGBessa/providers/Microsoft.Web/sites/testenodearduino",
+    "appService.deploySubpath": "."
+}
